@@ -1,10 +1,9 @@
 package com.epicwindmill.navigationsample.screens.main
 
 import android.os.Parcelable
-import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.RouterState
+import android.util.Log
+import com.arkivanov.decompose.*
 import com.arkivanov.decompose.replaceCurrent
-import com.arkivanov.decompose.router
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.decompose.value.operator.map
 import com.epicwindmill.navigationsample.screens.tabs.first.screena1.IScreenA1
@@ -45,19 +44,25 @@ class MainComponent(
 
     private fun home(componentContext: ComponentContext): IScreenA1 =
         ScreenA1Component(componentContext,
-            navigateToA2 = {}
+            navigateToA2 = {
+                Log.d("MainComponent", "Request to navigate to A2")
+            }
         )
 
     private fun leaderboard(componentContext: ComponentContext): IScreenB1 =
         ScreenB1Component(
             componentContext = componentContext,
-            navigateToB2 = {}
+            navigateToB2 = {
+                Log.d("MainComponent", "Request to navigate to B2")
+            }
         )
 
     private fun register(componentContext: ComponentContext): IScreenC1 =
         ScreenC1Component(
             componentContext = componentContext,
-            navigateToC2 = {}
+            navigateToC2 = {
+                Log.d("MainComponent", "Request to navigate to C2")
+            }
         )
 
     override fun onTabClick(tab: IMain.Tab): Unit =
