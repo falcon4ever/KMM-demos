@@ -6,12 +6,19 @@ import com.arkivanov.decompose.*
 import com.arkivanov.decompose.replaceCurrent
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.decompose.value.operator.map
+import com.epicwindmill.navigationsample.screens.tabs.first.IScreenA
+import com.epicwindmill.navigationsample.screens.tabs.first.ScreenAComponent
 import com.epicwindmill.navigationsample.screens.tabs.first.screena1.IScreenA1
 import com.epicwindmill.navigationsample.screens.tabs.first.screena1.ScreenA1Component
+import com.epicwindmill.navigationsample.screens.tabs.second.IScreenB
+import com.epicwindmill.navigationsample.screens.tabs.second.ScreenBComponent
 import com.epicwindmill.navigationsample.screens.tabs.second.screenb1.IScreenB1
 import com.epicwindmill.navigationsample.screens.tabs.second.screenb1.ScreenB1Component
+import com.epicwindmill.navigationsample.screens.tabs.third.IScreenC
+import com.epicwindmill.navigationsample.screens.tabs.third.ScreenCComponent
 import com.epicwindmill.navigationsample.screens.tabs.third.screenc1.IScreenC1
 import com.epicwindmill.navigationsample.screens.tabs.third.screenc1.ScreenC1Component
+import com.epicwindmill.navigationsample.utils.navigateSingleTop
 import kotlinx.parcelize.Parcelize
 
 class MainComponent(
@@ -20,7 +27,7 @@ class MainComponent(
 
     private val router =
         router<Config, IMain.Child>(
-            initialConfiguration = Config.ScreenA1,
+            initialConfiguration = Config.ScreenA,
             handleBackButton = true,
             childFactory = ::createChild
         )
@@ -35,58 +42,43 @@ class MainComponent(
         }
 
     private fun createChild(config: Config, componentContext: ComponentContext): IMain.Child =
-
         when (config) {
-            is Config.ScreenA1 -> IMain.Child.FirstTab(home(componentContext))
-            is Config.ScreenB1 -> IMain.Child.SecondTab(leaderboard(componentContext))
-            is Config.ScreenC1 -> IMain.Child.ThirdTab(register(componentContext))
+            is Config.ScreenA -> IMain.Child.ScreenA(screenA(componentContext))
+            is Config.ScreenB -> IMain.Child.ScreenB(screenB(componentContext))
+            is Config.ScreenC -> IMain.Child.ScreenC(screenC(componentContext))
         }
 
-    private fun home(componentContext: ComponentContext): IScreenA1 =
-        ScreenA1Component(componentContext,
-            navigateToA2 = {
-                Log.d("MainComponent", "Request to navigate to A2")
-            }
-        )
+    private fun screenA(componentContext: ComponentContext): IScreenA =
+        ScreenAComponent(componentContext)
 
-    private fun leaderboard(componentContext: ComponentContext): IScreenB1 =
-        ScreenB1Component(
-            componentContext = componentContext,
-            navigateToB2 = {
-                Log.d("MainComponent", "Request to navigate to B2")
-            }
-        )
+    private fun screenB(componentContext: ComponentContext): IScreenB =
+        ScreenBComponent(componentContext)
 
-    private fun register(componentContext: ComponentContext): IScreenC1 =
-        ScreenC1Component(
-            componentContext = componentContext,
-            navigateToC2 = {
-                Log.d("MainComponent", "Request to navigate to C2")
-            }
-        )
+    private fun screenC(componentContext: ComponentContext): IScreenC =
+        ScreenCComponent(componentContext)
 
     override fun onTabClick(tab: IMain.Tab): Unit =
         when (tab) {
-            IMain.Tab.FIRST -> router.replaceCurrent(Config.ScreenA1)
-            IMain.Tab.SECOND -> router.replaceCurrent(Config.ScreenB1)
-            IMain.Tab.THIRD -> router.replaceCurrent(Config.ScreenC1)
+            IMain.Tab.A -> router.navigateSingleTop(config = {Config.ScreenA})
+            IMain.Tab.B -> router.navigateSingleTop(config = {Config.ScreenB})
+            IMain.Tab.C -> router.navigateSingleTop(config = {Config.ScreenC})
         }
 
     private fun Config.toTab(): IMain.Tab =
         when (this) {
-            is Config.ScreenA1 -> IMain.Tab.FIRST
-            is Config.ScreenB1 -> IMain.Tab.SECOND
-            is Config.ScreenC1 -> IMain.Tab.THIRD
+            is Config.ScreenA -> IMain.Tab.A
+            is Config.ScreenB -> IMain.Tab.B
+            is Config.ScreenC -> IMain.Tab.C
         }
 
     private sealed class Config : Parcelable {
         @Parcelize
-        object ScreenA1 : Config()
+        object ScreenA : Config()
 
         @Parcelize
-        object ScreenB1 : Config()
+        object ScreenB : Config()
 
         @Parcelize
-        object ScreenC1 : Config()
+        object ScreenC : Config()
     }
 }

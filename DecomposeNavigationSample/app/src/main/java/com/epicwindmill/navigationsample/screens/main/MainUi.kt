@@ -9,14 +9,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.extensions.compose.jetpack.Children
 import com.arkivanov.decompose.extensions.compose.jetpack.animation.child.crossfade
 import com.arkivanov.decompose.extensions.compose.jetpack.asState
 import com.epicwindmill.navigationsample.R
+import com.epicwindmill.navigationsample.screens.tabs.first.ScreenAUi
 import com.epicwindmill.navigationsample.screens.tabs.first.screena1.ScreenA1Ui
+import com.epicwindmill.navigationsample.screens.tabs.second.ScreenBUi
 import com.epicwindmill.navigationsample.screens.tabs.second.screenb1.ScreenB1Ui
+import com.epicwindmill.navigationsample.screens.tabs.third.ScreenCUi
 import com.epicwindmill.navigationsample.screens.tabs.third.screenc1.ScreenC1Ui
 
+@ExperimentalDecomposeApi
 @ExperimentalComposeUiApi
 @Composable
 fun MainUi(main: IMain) {
@@ -36,10 +41,10 @@ fun MainUi(main: IMain) {
         ) {
             Log.d("MainUi", "nav: {${it.instance.toString()}}")
             when (val child = it.instance) {
-                is IMain.Child.FirstTab -> ScreenA1Ui(child.component)
-                is IMain.Child.SecondTab -> ScreenB1Ui(child.component)
-                is IMain.Child.ThirdTab -> ScreenC1Ui(child.component)
-            }.let {}
+                is IMain.Child.ScreenA -> ScreenAUi(child.component)
+                is IMain.Child.ScreenB -> ScreenBUi(child.component)
+                is IMain.Child.ScreenC -> ScreenCUi(child.component)
+            }
         }
     }
 }
@@ -63,38 +68,38 @@ fun BottomNavigationBar(
             icon = {
                 Icon(painterResource(id = R.drawable.ic_home), contentDescription = "first tab")
                    },
-            label = { Text(text = "First") },
+            label = { Text(text = "A") },
             selectedContentColor = Color.White,
             unselectedContentColor = Color.White.copy(0.4f),
             alwaysShowLabel = true,
-            selected = selectedTab == IMain.Tab.FIRST,
+            selected = selectedTab == IMain.Tab.A,
             onClick = {
-                onClick(IMain.Tab.FIRST)
+                onClick(IMain.Tab.A)
             }
         )
         BottomNavigationItem(
             icon = { Icon(
                 painterResource(id = R.drawable.ic_list), contentDescription = "second tab") },
-            label = { Text(text = "Second") },
+            label = { Text(text = "B") },
             selectedContentColor = Color.White,
             unselectedContentColor = Color.White.copy(0.4f),
             alwaysShowLabel = true,
-            selected = selectedTab == IMain.Tab.SECOND,
+            selected = selectedTab == IMain.Tab.B,
             onClick = {
-                onClick(IMain.Tab.SECOND)
+                onClick(IMain.Tab.B)
             }
         )
         BottomNavigationItem(
             icon = { Icon(
                 painterResource(id = R.drawable.ic_feedback), contentDescription = "third tab"
             ) },
-            label = { Text(text = "Third") },
+            label = { Text(text = "C") },
             selectedContentColor = Color.White,
             unselectedContentColor = Color.White.copy(0.4f),
             alwaysShowLabel = true,
-            selected = selectedTab == IMain.Tab.THIRD,
+            selected = selectedTab == IMain.Tab.C,
             onClick = {
-                onClick(IMain.Tab.THIRD)
+                onClick(IMain.Tab.C)
             }
         )
     }
@@ -109,5 +114,5 @@ fun TopBarPreview() {
 @Preview(showBackground = true)
 @Composable
 fun BottomNavigationBarPreview() {
-    BottomNavigationBar(IMain.Tab.FIRST, {})
+    BottomNavigationBar(IMain.Tab.A, {})
 }
