@@ -42,4 +42,7 @@ Landing   Login     Main
 * The `MainComponent` is where the bottom navigation is implemented and is responsible for switching between the tabs. It as well has its own router.
 * Each tab (`A`, `B` and `C`) has its own router. This is done so that we can remember which (child) component is active when we switch between the different tabs.
 * This also means that `Component A` is the only one that is aware of its children (`Component A1` and `Component A2`). The `MainComponent` only switches between component `A`, `B` and `C`.
-* The magic that make the bottom nav works is this piece of code from [Arkadii Ivanov](https://github.com/arkivanov/Decompose/discussions/178#discussioncomment-1005820). Currently provided as a [separate function](https://github.com/falcon4ever/KMM-demos/blob/main/DecomposeNavigationSample/app/src/main/java/com/epicwindmill/navigationsample/utils/DecomposeExt.kt) but hopefully at some point part of Decompose.
+* The magic that make the bottom nav work is this piece of code from [Arkadii Ivanov](https://github.com/arkivanov/Decompose/discussions/178#discussioncomment-1005820). Currently provided as a [separate function](https://github.com/falcon4ever/KMM-demos/blob/main/DecomposeNavigationSample/app/src/main/java/com/epicwindmill/navigationsample/utils/DecomposeExt.kt) but hopefully at some point part of Decompose.
+
+## Build env
+This demo was created using Android Studio Arctic Fox 2020.3.1 Beta 5. 
