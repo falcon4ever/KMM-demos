@@ -1,4 +1,4 @@
-package com.epicwindmill.decomposekmmnavigationsample.android.ui.screens
+package com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.tabs.first
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi

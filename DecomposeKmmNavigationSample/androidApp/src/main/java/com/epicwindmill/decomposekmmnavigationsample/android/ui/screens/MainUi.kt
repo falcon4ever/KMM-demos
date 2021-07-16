@@ -1,4 +1,4 @@
-package com.epicwindmill.decomposekmmnavigationsample.android
+package com.epicwindmill.decomposekmmnavigationsample.android.ui.screens
 
 import android.util.Log
 import androidx.compose.material.*
@@ -13,9 +13,10 @@ import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.extensions.compose.jetpack.Children
 import com.arkivanov.decompose.extensions.compose.jetpack.animation.child.crossfade
 import com.arkivanov.decompose.extensions.compose.jetpack.asState
-import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.ScreenAUi
-import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.ScreenBUi
-import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.ScreenCUi
+import com.epicwindmill.decomposekmmnavigationsample.android.R
+import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.tabs.first.ScreenAUi
+import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.tabs.second.ScreenBUi
+import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.tabs.third.ScreenCUi
 import com.epicwindmill.decomposekmmnavigationsample.components.main.IMain
 
 @ExperimentalDecomposeApi
