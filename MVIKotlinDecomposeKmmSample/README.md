@@ -1,4 +1,4 @@
-# Decompose/MVIKotlin/Ktor KMM Navigation Sample
+# Decompose/MVIKotlin/Ktor KMM Sample
 
 This demo app is an example of how we can use [Decompose](https://arkivanov.github.io/Decompose/getting-started/), [MVIKotlin](https://arkivanov.github.io/MVIKotlin/) and [Ktor](https://ktor.io/) to build a KMM based app. 
 
