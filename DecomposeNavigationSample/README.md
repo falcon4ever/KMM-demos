@@ -46,3 +46,7 @@ Landing   Login     Main
 
 ## Build env
 This demo was created using Android Studio Arctic Fox 2020.3.1 Beta 5. 
+
+## Demo
+
+![Desktop](screenshots/bottomnav_demo.png)

@@ -8,3 +8,7 @@ The demo implements Decompose `components`, a MVIKotlin `Store` and uses `ktor` 
 
 ## Build env
 This demo was created using Android Studio Arctic Fox 2020.3.1 Beta 5. 
+
+## Demo
+
+![Desktop](screenshots/quotes_demo.png)
