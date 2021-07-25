@@ -13,5 +13,3 @@ This demo was created using Android Studio Arctic Fox 2020.3.1 Beta 5.
 ## Demo
 
 ![Desktop](screenshots/quotes_demo.png)
-=======
->>>>>>> 3825a7866ff309f3f73a9944baa1a9c0ab5b49c8
