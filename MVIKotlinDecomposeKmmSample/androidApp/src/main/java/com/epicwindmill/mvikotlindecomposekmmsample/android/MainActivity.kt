@@ -18,6 +18,7 @@ import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
 import com.arkivanov.mvikotlin.timetravel.store.TimeTravelStoreFactory
 import com.epicwindmill.mvikotlindecomposekmmsample.android.ui.screens.RootUi
 import com.epicwindmill.mvikotlindecomposekmmsample.android.ui.theme.NavigationSampleTheme
+import com.epicwindmill.mvikotlindecomposekmmsample.api.SwansonQuotesApi
 import com.epicwindmill.mvikotlindecomposekmmsample.components.root.IRoot
 import com.epicwindmill.mvikotlindecomposekmmsample.components.root.RootComponent
 
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
     private fun myRoot(componentContext: ComponentContext): IRoot =
         RootComponent(
             componentContext = componentContext,
-            storeFactory = LoggingStoreFactory(TimeTravelStoreFactory(DefaultStoreFactory))
+            storeFactory = LoggingStoreFactory(TimeTravelStoreFactory(DefaultStoreFactory)),
+            quotesApi = SwansonQuotesApi()
         )
 }

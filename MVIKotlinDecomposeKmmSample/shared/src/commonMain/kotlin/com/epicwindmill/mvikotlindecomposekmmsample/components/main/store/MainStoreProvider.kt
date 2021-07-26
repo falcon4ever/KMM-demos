@@ -5,16 +5,16 @@ import com.arkivanov.mvikotlin.core.store.SimpleBootstrapper
 import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.SuspendExecutor
-import com.epicwindmill.mvikotlindecomposekmmsample.api.SwansonQuotesApi
+import com.epicwindmill.mvikotlindecomposekmmsample.api.IQuotesApi
 import com.epicwindmill.mvikotlindecomposekmmsample.components.main.store.MainStore.Intent
 import com.epicwindmill.mvikotlindecomposekmmsample.components.main.store.MainStore.State
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 
-internal class MainStoreProvider(private val storeFactory: StoreFactory) {
-
-    private val api = SwansonQuotesApi()
+internal class MainStoreProvider(private val storeFactory: StoreFactory,
+                                 private val quotesApi: IQuotesApi
+) {
 
     fun provide(): MainStore =
         object : MainStore, Store<Intent, State, Nothing> by storeFactory.create(
@@ -47,7 +47,7 @@ internal class MainStoreProvider(private val storeFactory: StoreFactory) {
         // Fetch quote via a suspend function and dispatch the result to the reducer.
         private suspend fun fetchQuote() {
             val newQuote = withContext(Dispatchers.Default) {
-                api.getAllQuotes().first()
+                quotesApi.getAllQuotes().first()
             }
             dispatch(Result.QuoteUpdated(newQuote))
         }

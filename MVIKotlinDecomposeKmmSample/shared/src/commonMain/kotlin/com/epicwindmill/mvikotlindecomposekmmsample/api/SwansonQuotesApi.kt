@@ -6,7 +6,7 @@ import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.*
 import kotlinx.serialization.json.Json
 
-class SwansonQuotesApi {
+class SwansonQuotesApi : IQuotesApi {
     private val httpClient = HttpClient {
         install(JsonFeature) {
             val json = Json {
@@ -17,7 +17,7 @@ class SwansonQuotesApi {
         }
     }
 
-    suspend fun getAllQuotes(): List<String> {
+    override suspend fun getAllQuotes(): List<String> {
         return httpClient.get(QUOTES_ENDPOINT)
     }
 

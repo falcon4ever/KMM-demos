@@ -7,6 +7,8 @@ import com.arkivanov.decompose.statekeeper.Parcelable
 import com.arkivanov.decompose.statekeeper.Parcelize
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.mvikotlin.core.store.StoreFactory
+import com.epicwindmill.mvikotlindecomposekmmsample.api.IQuotesApi
+import com.epicwindmill.mvikotlindecomposekmmsample.api.SwansonQuotesApi
 import com.epicwindmill.mvikotlindecomposekmmsample.components.main.IMain
 import com.epicwindmill.mvikotlindecomposekmmsample.components.main.MainComponent
 
@@ -17,13 +19,15 @@ class RootComponent internal constructor(
 
     constructor(
         componentContext: ComponentContext,
-        storeFactory: StoreFactory
+        storeFactory: StoreFactory,
+        quotesApi: IQuotesApi
     ) : this(
         componentContext = componentContext,
         main = { childContext ->
             MainComponent(
                 componentContext = childContext,
-                storeFactory = storeFactory
+                storeFactory = storeFactory,
+                quotesApi = quotesApi
             )
         }
     )
