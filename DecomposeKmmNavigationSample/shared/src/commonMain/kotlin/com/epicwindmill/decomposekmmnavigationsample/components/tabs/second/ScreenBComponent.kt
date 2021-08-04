@@ -8,6 +8,7 @@ import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.scre
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.screenb1.ScreenB1Component
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.screenb2.IScreenB2
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.screenb2.ScreenB2Component
+import com.epicwindmill.decomposekmmnavigationsample.components.tabs.third.IScreenC
 
 class ScreenBComponent(
     componentContext: ComponentContext
@@ -36,8 +37,9 @@ class ScreenBComponent(
     private fun screenB2(componentContext: ComponentContext): IScreenB2 =
         ScreenB2Component(componentContext, onFinished = {
             result ->
-            // Note if the router handles the back button, don't pop the router here but just use the backstack
-            ((router.state.value.backStack.last() as Child.Created).instance as IScreenB.Child.ScreenB1).component.onResult(result)
+            router.pop()
+            // The new active child should be Screen B1
+            (router.state.value.activeChild.instance as IScreenB.Child.ScreenB1).component.onResult(result)
         })
 
     private sealed class Config : Parcelable {

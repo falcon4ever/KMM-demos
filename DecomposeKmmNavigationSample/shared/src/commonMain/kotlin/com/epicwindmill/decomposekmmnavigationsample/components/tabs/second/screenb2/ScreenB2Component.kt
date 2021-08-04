@@ -15,7 +15,7 @@ class ScreenB2Component (
         // Return a result to the previous component
         onFinished(1234)
 
-        // Return false to allow other consumers.
-        return false
+        // Return true to consume the event
+        return true
     }
 }

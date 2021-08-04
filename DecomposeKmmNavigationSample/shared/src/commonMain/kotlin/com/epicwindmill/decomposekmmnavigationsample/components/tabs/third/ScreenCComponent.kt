@@ -36,7 +36,6 @@ class ScreenCComponent(
     private fun screenC2(componentContext: ComponentContext): IScreenC2 =
         ScreenC2Component(componentContext, onFinished = {
             result ->
-            // When handling the backbutton, we should pop the current destination ourselves.
             router.pop()
             // The new active child should be Screen C1
             (router.state.value.activeChild.instance as IScreenC.Child.ScreenC1).component.onResult(result)
