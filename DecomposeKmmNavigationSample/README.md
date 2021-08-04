@@ -44,8 +44,12 @@ Landing   Login     Main
 * This also means that `Component A` is the only one that is aware of its children (`Component A1` and `Component A2`). The `MainComponent` only switches between component `A`, `B` and `C`.
 * The magic that make the bottom nav work is this piece of code from [Arkadii Ivanov](https://github.com/arkivanov/Decompose/discussions/178#discussioncomment-1005820). Currently provided as a [separate function](https://github.com/falcon4ever/KMM-demos/blob/main/DecomposeNavigationSample/app/src/main/java/com/epicwindmill/navigationsample/utils/DecomposeExt.kt) but hopefully at some point part of Decompose.
 
+#### Extra
+* Tab B shows an example how you can return a value back to the previous screen (Example if the router handles the back button navigation).
+* Tab C shows an example how you can return a value back to the previous screen (Example if the router is not handling the back button navigation).
+
 ## Build env
-This demo was created using Android Studio Arctic Fox 2020.3.1 Beta 5. 
+This demo was created using Android Studio Arctic Fox 2020.3.1. 
 
 ## Demo
 

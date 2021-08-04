@@ -1,7 +1,7 @@
 package com.epicwindmill.decomposekmmnavigationsample.utils
 
 import com.arkivanov.decompose.Router
-import com.arkivanov.decompose.statekeeper.Parcelable
+import com.arkivanov.essenty.parcelable.Parcelable
 
 inline fun <C : Parcelable, reified T : C> Router<C, *>.navigateSingleTop(crossinline config: () -> T) {
     navigate { stack ->

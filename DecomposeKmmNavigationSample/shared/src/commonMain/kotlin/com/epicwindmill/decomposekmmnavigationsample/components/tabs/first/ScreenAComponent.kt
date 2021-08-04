@@ -4,9 +4,9 @@ import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.RouterState
 import com.arkivanov.decompose.push
 import com.arkivanov.decompose.router
-import com.arkivanov.decompose.statekeeper.Parcelable
-import com.arkivanov.decompose.statekeeper.Parcelize
 import com.arkivanov.decompose.value.Value
+import com.arkivanov.essenty.parcelable.Parcelable
+import com.arkivanov.essenty.parcelable.Parcelize
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena1.IScreenA1
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena1.ScreenA1Component
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena2.IScreenA2

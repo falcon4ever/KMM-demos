@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena2.IScreenA2
 
 @Composable
-fun ScreenA2Ui(screenA2: IScreenA2) {
+fun ScreenA2Ui(component: IScreenA2) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Column {
             Text(

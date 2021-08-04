@@ -55,7 +55,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
     implementation("androidx.activity:activity-compose:1.3.0-rc01")
 
-    implementation("com.arkivanov.decompose:decompose:0.2.6")
+    implementation("com.arkivanov.decompose:decompose:0.3.0")
     implementation("com.arkivanov.decompose:extensions-compose-jetpack:0.2.6")
 
     testImplementation("junit:junit:4.+")

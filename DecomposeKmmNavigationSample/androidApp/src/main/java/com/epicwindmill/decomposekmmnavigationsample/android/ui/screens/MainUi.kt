@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.sp
 import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.extensions.compose.jetpack.Children
 import com.arkivanov.decompose.extensions.compose.jetpack.animation.child.crossfade
-import com.arkivanov.decompose.extensions.compose.jetpack.asState
+import com.arkivanov.decompose.extensions.compose.jetpack.subscribeAsState
 import com.epicwindmill.decomposekmmnavigationsample.android.R
 import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.tabs.first.ScreenAUi
 import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.tabs.second.ScreenBUi
@@ -22,19 +22,20 @@ import com.epicwindmill.decomposekmmnavigationsample.components.main.IMain
 @ExperimentalDecomposeApi
 @ExperimentalComposeUiApi
 @Composable
-fun MainUi(main: IMain) {
-    val model by main.model.asState()
+fun MainUi(component: IMain) {
+    val model by component.model.subscribeAsState()
+
     Scaffold(
         topBar = { TopBar(
             title = model.selectedTab.name + " Tab"
         ) },
         bottomBar = { BottomNavigationBar(
             selectedTab = model.selectedTab,
-            onClick = main::onTabClick
+            onClick = component::onTabClick
         ) }
     ) {
         Children(
-            routerState = main.routerState,
+            routerState = component.routerState,
             animation = crossfade()
         ) {
             Log.d("MainUi", "nav: {${it.instance.toString()}}")

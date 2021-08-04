@@ -1,12 +1,9 @@
 package com.epicwindmill.decomposekmmnavigationsample.components.tabs.third
 
-import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.RouterState
-import com.arkivanov.decompose.push
-import com.arkivanov.decompose.router
-import com.arkivanov.decompose.statekeeper.Parcelable
-import com.arkivanov.decompose.statekeeper.Parcelize
+import com.arkivanov.decompose.*
 import com.arkivanov.decompose.value.Value
+import com.arkivanov.essenty.parcelable.Parcelable
+import com.arkivanov.essenty.parcelable.Parcelize
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.third.screenc1.IScreenC1
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.third.screenc1.ScreenC1Component
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.third.screenc2.IScreenC2
@@ -19,7 +16,7 @@ class ScreenCComponent(
     private val router =
         router<Config, IScreenC.Child>(
             initialConfiguration = Config.ScreenC1,
-            handleBackButton = true,
+            handleBackButton = false,
             childFactory = ::createChild
         )
 
@@ -37,7 +34,13 @@ class ScreenCComponent(
         }
 
     private fun screenC2(componentContext: ComponentContext): IScreenC2 =
-        ScreenC2Component(componentContext)
+        ScreenC2Component(componentContext, onFinished = {
+            result ->
+            // When handling the backbutton, we should pop the current destination ourselves.
+            router.pop()
+            // The new active child should be Screen C1
+            (router.state.value.activeChild.instance as IScreenC.Child.ScreenC1).component.onResult(result)
+        })
 
     private sealed class Config : Parcelable {
         @Parcelize

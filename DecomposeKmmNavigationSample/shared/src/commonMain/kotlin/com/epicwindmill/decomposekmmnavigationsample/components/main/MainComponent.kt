@@ -3,10 +3,10 @@ package com.epicwindmill.decomposekmmnavigationsample.components.main
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.RouterState
 import com.arkivanov.decompose.router
-import com.arkivanov.decompose.statekeeper.Parcelable
-import com.arkivanov.decompose.statekeeper.Parcelize
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.decompose.value.operator.map
+import com.arkivanov.essenty.parcelable.Parcelable
+import com.arkivanov.essenty.parcelable.Parcelize
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.IScreenA
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.ScreenAComponent
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.IScreenB

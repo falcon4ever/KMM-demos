@@ -10,9 +10,9 @@ import com.epicwindmill.decomposekmmnavigationsample.components.root.IRoot
 @ExperimentalComposeUiApi
 @ExperimentalDecomposeApi
 @Composable
-fun RootUi(root: IRoot) {
+fun RootUi(component: IRoot) {
     Children(
-        routerState = root.routerState,
+        routerState = component.routerState,
         animation = crossfade()
     ) {
         when (val child = it.instance) {

@@ -1,12 +1,9 @@
 package com.epicwindmill.decomposekmmnavigationsample.components.tabs.second
 
-import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.RouterState
-import com.arkivanov.decompose.push
-import com.arkivanov.decompose.router
-import com.arkivanov.decompose.statekeeper.Parcelable
-import com.arkivanov.decompose.statekeeper.Parcelize
+import com.arkivanov.decompose.*
 import com.arkivanov.decompose.value.Value
+import com.arkivanov.essenty.parcelable.Parcelable
+import com.arkivanov.essenty.parcelable.Parcelize
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.screenb1.IScreenB1
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.screenb1.ScreenB1Component
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.screenb2.IScreenB2
@@ -37,7 +34,11 @@ class ScreenBComponent(
         }
 
     private fun screenB2(componentContext: ComponentContext): IScreenB2 =
-        ScreenB2Component(componentContext)
+        ScreenB2Component(componentContext, onFinished = {
+            result ->
+            // Note if the router handles the back button, don't pop the router here but just use the backstack
+            ((router.state.value.backStack.last() as Child.Created).instance as IScreenB.Child.ScreenB1).component.onResult(result)
+        })
 
     private sealed class Config : Parcelable {
         @Parcelize

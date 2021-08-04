@@ -10,9 +10,9 @@ import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.IScre
 @ExperimentalComposeUiApi
 @ExperimentalDecomposeApi
 @Composable
-fun ScreenAUi(screenA: IScreenA) {
+fun ScreenAUi(component: IScreenA) {
     Children(
-        routerState = screenA.routerState,
+        routerState = component.routerState,
         animation = crossfade()
     ) {
         when (val child = it.instance) {
