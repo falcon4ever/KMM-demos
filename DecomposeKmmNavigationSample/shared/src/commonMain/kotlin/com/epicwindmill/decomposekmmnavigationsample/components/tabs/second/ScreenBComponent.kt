@@ -8,7 +8,6 @@ import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.scre
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.screenb1.ScreenB1Component
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.screenb2.IScreenB2
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.screenb2.ScreenB2Component
-import com.epicwindmill.decomposekmmnavigationsample.components.tabs.third.IScreenC
 
 class ScreenBComponent(
     componentContext: ComponentContext

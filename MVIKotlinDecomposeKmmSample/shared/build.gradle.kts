@@ -31,21 +31,18 @@ kotlin {
 
     val serializationVersion = "1.2.2"
     val ktorVersion = "1.6.1"
+    val coroutinesVersion = "1.5.1-native-mt"
 
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("com.arkivanov.decompose:decompose:0.2.6")
+                implementation("com.arkivanov.decompose:decompose:${rootProject.extra["decomposeVersion"]}")
 
-                implementation("com.arkivanov.mvikotlin:mvikotlin:2.0.4")
-                implementation("com.arkivanov.mvikotlin:mvikotlin-main:2.0.4")
-                implementation("com.arkivanov.mvikotlin:mvikotlin-logging:2.0.4")
-                implementation("com.arkivanov.mvikotlin:mvikotlin-timetravel:2.0.4")
-                implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:2.0.4")
+                implementation("com.arkivanov.mvikotlin:mvikotlin:${rootProject.extra["mviKotlinVersion"]}")
+                implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:${rootProject.extra["mviKotlinVersion"]}")
+                implementation("com.arkivanov.mvikotlin:rx:${rootProject.extra["mviKotlinVersion"]}")
 
-                implementation("com.arkivanov.mvikotlin:rx:2.0.4")
-
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
 
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
 
@@ -80,10 +77,10 @@ kotlin {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 30
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(30)
+        minSdk = 21
+        targetSdk = 30
     }
 }
