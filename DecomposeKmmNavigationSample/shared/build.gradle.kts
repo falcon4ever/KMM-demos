@@ -31,7 +31,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("com.arkivanov.decompose:decompose:0.3.0")
+                implementation("com.arkivanov.decompose:decompose:${rootProject.extra["decomposeVersion"]}")
             }
         }
         val commonTest by getting {

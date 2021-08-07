@@ -1,6 +1,6 @@
 buildscript {
 
-    val kotlinVersion = "1.5.10"
+    val kotlinVersion = "1.5.21"
     val decomposeVersion by rootProject.extra { "0.3.1" }
 
     repositories {
