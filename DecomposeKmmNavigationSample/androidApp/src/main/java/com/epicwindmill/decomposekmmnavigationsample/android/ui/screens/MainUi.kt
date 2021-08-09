@@ -1,6 +1,5 @@
 package com.epicwindmill.decomposekmmnavigationsample.android.ui.screens
 
-import android.util.Log
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -38,7 +37,6 @@ fun MainUi(component: IMain) {
             routerState = component.routerState,
             animation = crossfade()
         ) {
-            Log.d("MainUi", "nav: {${it.instance.toString()}}")
             when (val child = it.instance) {
                 is IMain.Child.ScreenA -> ScreenAUi(child.component)
                 is IMain.Child.ScreenB -> ScreenBUi(child.component)

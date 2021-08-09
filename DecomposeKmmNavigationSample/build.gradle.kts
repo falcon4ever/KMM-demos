@@ -1,6 +1,7 @@
 buildscript {
 
-    val kotlinVersion = "1.5.21"
+    val kotlinVersion = "1.5.10" // For Android because of Compose 1.0.0 being tied to this version...
+    // val kotlinVersion = "1.5.21" // For iOS and future compose versions
     val decomposeVersion by rootProject.extra { "0.3.1" }
 
     repositories {

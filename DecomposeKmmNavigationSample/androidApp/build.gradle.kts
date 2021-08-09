@@ -10,11 +10,10 @@ android {
 
     defaultConfig {
         applicationId = "com.epicwindmill.decomposekmmnavigationsample.android"
-        minSdk = 21
+        minSdk = 24
         targetSdk = 30
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -58,5 +57,5 @@ dependencies {
 
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.0.0-rc01")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.0-alpha01")
 }

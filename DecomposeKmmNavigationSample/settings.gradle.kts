@@ -6,6 +6,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "Decompose_KMM_Navigation_Sample"
+rootProject.name = "Decompose_Kmm_Navigation_Sample"
 include(":androidApp")
 include(":shared")
