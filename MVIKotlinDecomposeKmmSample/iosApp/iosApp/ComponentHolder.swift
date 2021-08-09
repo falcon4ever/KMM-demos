@@ -1,7 +1,7 @@
 import shared
 
 class ComponentHolder<T> {
-    let lifecycle: LifecycleRegistry
+    let lifecycle: LifecycleRegistry_
     let component: T
     
     init(factory: (ComponentContext) -> T) {
