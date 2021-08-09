@@ -21,12 +21,14 @@ class MainActivity : AppCompatActivity() {
     @ExperimentalComposeUiApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val component = RootComponent(defaultComponentContext())
+
         setContent {
             NavigationSampleTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        val component = RootComponent(defaultComponentContext())
                         RootUi(component)
                     }
                 }
