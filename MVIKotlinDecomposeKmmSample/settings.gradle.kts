@@ -6,6 +6,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "MVIKotlin_Decompose_KMM_Sample"
+rootProject.name = "MVI_Kotlin_Decompose_Kmm_Sample"
 include(":androidApp")
 include(":shared")

@@ -2,33 +2,29 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
-    kotlin("native.cocoapods")
     id("com.android.library")
     id("kotlin-parcelize")
     kotlin("plugin.serialization")
 }
 
-version = "1.0"
-
 kotlin {
     android()
 
-    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
-        if (System.getenv("SDK_NAME")?.startsWith("iphoneos") == true)
-            ::iosArm64
-        else
-            ::iosX64
-
-    iosTarget("ios") {}
-
-    cocoapods {
-        summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
-        ios.deploymentTarget = "14.1"
-        frameworkName = "shared"
-        podfile = project.file("../iosApp/Podfile")
+    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
+        System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
+        else -> ::iosX64
     }
 
+    iosTarget("ios") {
+        binaries {
+            framework {
+                baseName = "shared"
+                transitiveExport = true
+                export("com.arkivanov.decompose:decompose:${rootProject.extra["decomposeVersion"]}")
+            }
+        }
+    }
+    
     val serializationVersion = "1.2.2"
     val ktorVersion = "1.6.1"
     val coroutinesVersion = "1.5.1-native-mt"
@@ -70,6 +66,8 @@ kotlin {
         val iosMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
+
+                api("com.arkivanov.decompose:decompose:${rootProject.extra["decomposeVersion"]}")
             }
         }
         val iosTest by getting
@@ -80,7 +78,7 @@ android {
     compileSdk = 30
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 21
+        minSdk = 24
         targetSdk = 30
     }
 }
