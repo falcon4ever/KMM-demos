@@ -52,4 +52,4 @@ This demo was created using Android Studio Arctic Fox 2020.3.1 / XCode 12.4
 
 ## Demo
 
-![Desktop](screenshots/bottomnav_demo.png)
+![Mobile](screenshots/bottomnav_demo_android_ios.png)
