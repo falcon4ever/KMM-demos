@@ -1,6 +1,6 @@
 # Decompose KMM Navigation Sample
 
-This demo app is an example of how we can use [Decompose](https://arkivanov.github.io/Decompose/getting-started/) to build a KMM / bottom navigation based app. 
+This demo app is an example of how we can use [Decompose](https://arkivanov.github.io/Decompose/getting-started/installation/) to build a KMM / bottom navigation based app. 
 
 The behavior should be similar to the example created by the Android team as seen in this [Navigation Advanced Sample](https://github.com/android/architecture-components-samples/tree/master/NavigationAdvancedSample) which is part of the Android Architecture samples.
 

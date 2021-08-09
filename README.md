@@ -6,4 +6,4 @@ KMM experiments
 
 
 ## Notes:
-Currently the demos only have implementations for Android/Jetpack Compose. Feel free to create PRs for the Swift UI implementations.
+Both demos contain Android/Jetpack Compose and iOS/SwiftUI examples.
