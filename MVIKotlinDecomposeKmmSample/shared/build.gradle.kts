@@ -19,8 +19,9 @@ kotlin {
         binaries {
             framework {
                 baseName = "shared"
-                transitiveExport = true
                 export("com.arkivanov.decompose:decompose:${rootProject.extra["decomposeVersion"]}")
+                export("com.arkivanov.mvikotlin:mvikotlin-main:${rootProject.extra["mviKotlinVersion"]}")
+                export("com.arkivanov.essenty:lifecycle:${rootProject.extra["essentyVersion"]}")
             }
         }
     }
@@ -33,6 +34,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("com.arkivanov.decompose:decompose:${rootProject.extra["decomposeVersion"]}")
+
+                implementation("com.arkivanov.essenty:lifecycle:${rootProject.extra["essentyVersion"]}")
 
                 implementation("com.arkivanov.mvikotlin:mvikotlin:${rootProject.extra["mviKotlinVersion"]}")
                 implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:${rootProject.extra["mviKotlinVersion"]}")
@@ -67,7 +70,10 @@ kotlin {
             dependencies {
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
 
+                api("com.arkivanov.essenty:lifecycle:${rootProject.extra["essentyVersion"]}")
+
                 api("com.arkivanov.decompose:decompose:${rootProject.extra["decomposeVersion"]}")
+                api("com.arkivanov.mvikotlin:mvikotlin-main:${rootProject.extra["mviKotlinVersion"]}")
             }
         }
         val iosTest by getting
