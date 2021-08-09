@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		A3C2708926C168D3001467E1 /* ComponentHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2708826C168D3001467E1 /* ComponentHolder.swift */; };
+		A3C2708B26C16949001467E1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2708A26C16949001467E1 /* RootView.swift */; };
+		A3C2708D26C169F6001467E1 /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2708C26C169F6001467E1 /* ObservableValue.swift */; };
+		A3C2708F26C16A36001467E1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2708E26C16A36001467E1 /* MainView.swift */; };
+		A3C2709326C16C4B001467E1 /* ScreenA1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2709226C16C4B001467E1 /* ScreenA1View.swift */; };
+		A3C2709526C16C5D001467E1 /* ScreenAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2709426C16C5D001467E1 /* ScreenAView.swift */; };
+		A3C2709726C16C70001467E1 /* ScreenA2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2709626C16C70001467E1 /* ScreenA2View.swift */; };
+		A3C2709926C16C7E001467E1 /* ScreenBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2709826C16C7E001467E1 /* ScreenBView.swift */; };
+		A3C2709B26C16C89001467E1 /* ScreenB1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2709A26C16C89001467E1 /* ScreenB1View.swift */; };
+		A3C2709D26C16C93001467E1 /* ScreenB2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2709C26C16C93001467E1 /* ScreenB2View.swift */; };
+		A3C2709F26C16C9E001467E1 /* ScreenCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2709E26C16C9E001467E1 /* ScreenCView.swift */; };
+		A3C270A126C16CA9001467E1 /* ScreenC1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C270A026C16CA9001467E1 /* ScreenC1View.swift */; };
+		A3C270A326C16CB4001467E1 /* ScreenC2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C270A226C16CB4001467E1 /* ScreenC2View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +42,19 @@
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3C2708826C168D3001467E1 /* ComponentHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentHolder.swift; sourceTree = "<group>"; };
+		A3C2708A26C16949001467E1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A3C2708C26C169F6001467E1 /* ObservableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
+		A3C2708E26C16A36001467E1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A3C2709226C16C4B001467E1 /* ScreenA1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenA1View.swift; sourceTree = "<group>"; };
+		A3C2709426C16C5D001467E1 /* ScreenAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAView.swift; sourceTree = "<group>"; };
+		A3C2709626C16C70001467E1 /* ScreenA2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenA2View.swift; sourceTree = "<group>"; };
+		A3C2709826C16C7E001467E1 /* ScreenBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBView.swift; sourceTree = "<group>"; };
+		A3C2709A26C16C89001467E1 /* ScreenB1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenB1View.swift; sourceTree = "<group>"; };
+		A3C2709C26C16C93001467E1 /* ScreenB2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenB2View.swift; sourceTree = "<group>"; };
+		A3C2709E26C16C9E001467E1 /* ScreenCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCView.swift; sourceTree = "<group>"; };
+		A3C270A026C16CA9001467E1 /* ScreenC1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenC1View.swift; sourceTree = "<group>"; };
+		A3C270A226C16CB4001467E1 /* ScreenC2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenC2View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +91,19 @@
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
+				A3C2708826C168D3001467E1 /* ComponentHolder.swift */,
+				A3C2708A26C16949001467E1 /* RootView.swift */,
+				A3C2708C26C169F6001467E1 /* ObservableValue.swift */,
+				A3C2708E26C16A36001467E1 /* MainView.swift */,
+				A3C2709426C16C5D001467E1 /* ScreenAView.swift */,
+				A3C2709226C16C4B001467E1 /* ScreenA1View.swift */,
+				A3C2709626C16C70001467E1 /* ScreenA2View.swift */,
+				A3C2709826C16C7E001467E1 /* ScreenBView.swift */,
+				A3C2709A26C16C89001467E1 /* ScreenB1View.swift */,
+				A3C2709C26C16C93001467E1 /* ScreenB2View.swift */,
+				A3C2709E26C16C9E001467E1 /* ScreenCView.swift */,
+				A3C270A026C16CA9001467E1 /* ScreenC1View.swift */,
+				A3C270A226C16CB4001467E1 /* ScreenC2View.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -166,8 +205,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C2709F26C16C9E001467E1 /* ScreenCView.swift in Sources */,
+				A3C2709526C16C5D001467E1 /* ScreenAView.swift in Sources */,
+				A3C2709726C16C70001467E1 /* ScreenA2View.swift in Sources */,
+				A3C2708B26C16949001467E1 /* RootView.swift in Sources */,
+				A3C270A326C16CB4001467E1 /* ScreenC2View.swift in Sources */,
+				A3C2708F26C16A36001467E1 /* MainView.swift in Sources */,
+				A3C2709D26C16C93001467E1 /* ScreenB2View.swift in Sources */,
+				A3C2709B26C16C89001467E1 /* ScreenB1View.swift in Sources */,
+				A3C2708D26C169F6001467E1 /* ObservableValue.swift in Sources */,
+				A3C2709926C16C7E001467E1 /* ScreenBView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				A3C270A126C16CA9001467E1 /* ScreenC1View.swift in Sources */,
+				A3C2708926C168D3001467E1 /* ComponentHolder.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				A3C2709326C16C4B001467E1 /* ScreenA1View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

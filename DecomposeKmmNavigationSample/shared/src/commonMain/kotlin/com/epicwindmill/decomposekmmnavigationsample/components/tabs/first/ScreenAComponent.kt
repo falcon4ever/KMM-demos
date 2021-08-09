@@ -1,9 +1,6 @@
 package com.epicwindmill.decomposekmmnavigationsample.components.tabs.first
 
-import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.RouterState
-import com.arkivanov.decompose.push
-import com.arkivanov.decompose.router
+import com.arkivanov.decompose.*
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.parcelable.Parcelable
 import com.arkivanov.essenty.parcelable.Parcelize
@@ -11,6 +8,7 @@ import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.scree
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena1.ScreenA1Component
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena2.IScreenA2
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena2.ScreenA2Component
+import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.IScreenB
 
 class ScreenAComponent(
     componentContext: ComponentContext
@@ -37,7 +35,9 @@ class ScreenAComponent(
         }
 
     private fun screenA2(componentContext: ComponentContext): IScreenA2 =
-        ScreenA2Component(componentContext)
+        ScreenA2Component(componentContext, onFinished = {
+            router.pop()
+        })
 
     private sealed class Config : Parcelable {
         @Parcelize

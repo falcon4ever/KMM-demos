@@ -2,15 +2,12 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-	let greet = Greeting().greeting()
-
-	var body: some View {
-		Text(greet)
-	}
-}
-
-struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		ContentView()
-	}
+    @State
+    private var componentHolder = ComponentHolder(factory: RootComponent.init)
+    
+    var body: some View {
+        RootView(componentHolder.component)
+            .onAppear { LifecycleRegistryExtKt.resume(self.componentHolder.lifecycle) }
+            .onDisappear { LifecycleRegistryExtKt.stop(self.componentHolder.lifecycle) }
+    }
 }

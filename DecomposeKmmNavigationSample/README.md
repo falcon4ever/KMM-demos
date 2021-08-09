@@ -50,6 +50,10 @@ Landing   Login     Main
 ## Build env
 This demo was created using Android Studio Arctic Fox 2020.3.1. 
 
+### Issues
+* Compose 1.0.0 requires you to use kotlinVersion 1.5.10 (modify it in the root build.gradle.kts). This will change in future versions of Compose.
+* To build the iOS version, we need kotlinVersion 1.5.21 which contains the embedAndSignAppleFrameworkForXcode task.
+
 ## Demo
 
 ![Desktop](screenshots/bottomnav_demo.png)
