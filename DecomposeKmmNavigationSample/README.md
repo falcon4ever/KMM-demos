@@ -7,7 +7,7 @@ The behavior should be similar to the example created by the Android team as see
 
 ## Implementation notes
 
-All `Components` lives in the shared library. A Jetpack Compose implementation is available for Android. Help building the interface in SwiftUI for iOS is welcomed (Submit a PR!).
+All `Components` lives in the shared library. A Jetpack Compose implementation is available for Android and a SwiftUI implementation is available for iOS.
 
 ### Component tree
 The current [Component](https://arkivanov.github.io/Decompose/component/overview/) structure is ordered like this:
@@ -48,11 +48,7 @@ Landing   Login     Main
 * Tab B, C shows an example how you can return a value back to the previous screen
 
 ## Build env
-This demo was created using Android Studio Arctic Fox 2020.3.1. 
-
-### Issues
-* Compose 1.0.0 requires you to use kotlinVersion 1.5.10 (modify it in the root build.gradle.kts). This will change in future versions of Compose.
-* To build the iOS version, we need kotlinVersion 1.5.21 which contains the embedAndSignAppleFrameworkForXcode task.
+This demo was created using Android Studio Arctic Fox 2020.3.1 / XCode 12.4
 
 ## Demo
 

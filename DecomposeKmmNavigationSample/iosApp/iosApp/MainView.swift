@@ -21,7 +21,7 @@ struct MainView: View {
         
         let child = self.routerStates.value.activeChild.instance
         
-        let binding = Binding<Int>(get: {
+        let selectedTab = Binding<Int>(get: {
             switch model.selectedTab {
                 case IMainTab.a:
                     return 0
@@ -46,6 +46,20 @@ struct MainView: View {
             }
         }
         
+        switch child {
+            case let screenA as IMainChild.ScreenA:
+                ScreenAView(screenA.component, selectedTab: selectedTab)
+            case let screenB as IMainChild.ScreenB:
+                ScreenBView(screenB.component, selectedTab: selectedTab)
+            case let screenC as IMainChild.ScreenC:
+                ScreenCView(screenC.component, selectedTab: selectedTab)
+            default:
+                EmptyView()
+        }
+        
+        /*
+        // TODO would it be nicer to have the navigation view here and unpack the A,B,C routers here as well?
+         
         NavigationView {
             TabView(selection: binding) {
                 VStack {
@@ -91,5 +105,6 @@ struct MainView: View {
             }
             //.navigationBarTitle("Test", displayMode: .inline)
         }
+         */
     }
 }

@@ -11,10 +11,12 @@ class ScreenA2Component (
         backPressedDispatcher.register(::onBackPressed)
     }
 
-    override fun onCloseClicked() {
+    // Used by iOS
+    override fun onBackClicked() {
         onFinished()
     }
 
+    // Used by Android
     private fun onBackPressed(): Boolean {
         onFinished()
 

@@ -1,8 +1,8 @@
 buildscript {
 
-    // val kotlinVersion = "1.5.10" // For Android because of Compose 1.0.0 being tied to this version...
-    val kotlinVersion = "1.5.21" // For iOS (contains embedAndSignAppleFrameworkForXcode) and future Compose versions
+    val kotlinVersion by rootProject.extra { "1.5.21" }
     val decomposeVersion by rootProject.extra { "0.3.1" }
+    val composeVersion by rootProject.extra { "1.0.1" }
 
     repositories {
         gradlePluginPortal()

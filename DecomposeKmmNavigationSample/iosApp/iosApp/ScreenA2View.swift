@@ -10,8 +10,5 @@ struct ScreenA2View: View {
     
     var body: some View {
         Text("Screen A2")
-        Button("Go to Screen A1") {
-            component.onCloseClicked()
-        }.padding(10.0)
     }
 }

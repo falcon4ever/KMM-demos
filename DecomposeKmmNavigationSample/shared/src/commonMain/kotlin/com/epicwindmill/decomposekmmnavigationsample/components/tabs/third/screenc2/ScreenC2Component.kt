@@ -11,9 +11,15 @@ class ScreenC2Component (
         backPressedDispatcher.register(::onBackPressed)
     }
 
-    private fun onBackPressed(): Boolean {
+    // Used by iOS
+    override fun onBackClicked() {
         // Return a result to the previous component
         onFinished(1234)
+    }
+
+    // Used by Android
+    private fun onBackPressed(): Boolean {
+        onBackClicked()
 
         // Return true to consume the event
         return true
