@@ -1,6 +1,10 @@
 package com.epicwindmill.decomposekmmnavigationsample.android.ui.screens
 
 import androidx.compose.material.*
+import androidx.compose.material.Icon
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -17,6 +21,9 @@ import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.tabs.fir
 import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.tabs.second.ScreenBUi
 import com.epicwindmill.decomposekmmnavigationsample.android.ui.screens.tabs.third.ScreenCUi
 import com.epicwindmill.decomposekmmnavigationsample.components.main.IMain
+import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.IScreenA
+import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.IScreenB
+import com.epicwindmill.decomposekmmnavigationsample.components.tabs.third.IScreenC
 
 @ExperimentalDecomposeApi
 @ExperimentalComposeUiApi
@@ -26,7 +33,8 @@ fun MainUi(component: IMain) {
 
     Scaffold(
         topBar = { TopBar(
-            title = model.selectedTab.name + " Tab"
+            title = "Tab ${model.selectedTab.name}",
+            component = component
         ) },
         bottomBar = { BottomNavigationBar(
             selectedTab = model.selectedTab,
@@ -47,10 +55,67 @@ fun MainUi(component: IMain) {
 }
 
 @Composable
-fun TopBar(title: String) {
+fun TopBar(title: String, component: IMain) {
+    when (val child = component.routerState.value.activeChild.instance) {
+        is IMain.Child.ScreenA -> {
+
+            // Subscribe to child (router)state here so that when the router in Screen A updates, it will trigger an update here.
+            val routerState by child.component.routerState.subscribeAsState()
+            when (val subchild = routerState.activeChild.instance) {
+                is IScreenA.Child.ScreenA1 -> {
+                    TopBarRoot(title)
+                }
+                is IScreenA.Child.ScreenA2 -> {
+                    TopBarBackButton(title) { subchild.component.onBackClicked() }
+                }
+            }
+        }
+        is IMain.Child.ScreenB -> {
+
+            val routerState by child.component.routerState.subscribeAsState()
+            when (val subchild = routerState.activeChild.instance) {
+                is IScreenB.Child.ScreenB1 -> {
+                    TopBarRoot(title)
+                }
+                is IScreenB.Child.ScreenB2 -> {
+                    TopBarBackButton(title) { subchild.component.onBackClicked() }
+                }
+            }
+        }
+        is IMain.Child.ScreenC -> {
+
+            val routerState by child.component.routerState.subscribeAsState()
+            when (val subchild = routerState.activeChild.instance) {
+                is IScreenC.Child.ScreenC1 -> {
+                    TopBarRoot(title)
+                }
+                is IScreenC.Child.ScreenC2 -> {
+                    TopBarBackButton(title) { subchild.component.onBackClicked() }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun TopBarRoot(title: String) {
     TopAppBar(
         title = {
             Text(text = title, fontSize = 18.sp)
+        }
+    )
+}
+
+@Composable
+fun TopBarBackButton(title: String, onBackClicked: () -> Unit) {
+    TopAppBar(
+        title = {
+            Text(text = title, fontSize = 18.sp)
+        },
+        navigationIcon = {
+            IconButton(onClick = onBackClicked) {
+                Icon(Icons.Filled.ArrowBack, "Back")
+            }
         }
     )
 }
@@ -100,12 +165,6 @@ fun BottomNavigationBar(
             }
         )
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun TopBarPreview() {
-    TopBar("Test title")
 }
 
 @Preview(showBackground = true)
