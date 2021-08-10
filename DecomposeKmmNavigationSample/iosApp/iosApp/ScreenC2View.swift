@@ -9,6 +9,6 @@ struct ScreenC2View: View {
     }
     
     var body: some View {
-        Text("C2")
+        Text("Screen C2")
     }
 }
