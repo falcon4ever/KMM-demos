@@ -1,6 +1,6 @@
 package com.epicwindmill.decomposekmmnavigationsample.components.tabs.third
 
-import com.arkivanov.decompose.RouterState
+import com.arkivanov.decompose.router.RouterState
 import com.arkivanov.decompose.value.Value
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.third.screenc1.IScreenC1
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.third.screenc2.IScreenC2

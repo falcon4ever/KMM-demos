@@ -48,7 +48,7 @@ Landing   Login     Main
 * Tab B, C shows an example how you can return a value back to the previous screen
 
 ## Build env
-This demo was created using Android Studio Arctic Fox 2020.3.1 / XCode 12.4
+This demo was created using Android Studio Bumblebee 2021.1.1 Beta 1 / XCode 13.1
 
 ## Demo
 

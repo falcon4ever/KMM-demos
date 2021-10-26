@@ -1,8 +1,8 @@
 package com.epicwindmill.decomposekmmnavigationsample.components.main
 
 import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.RouterState
-import com.arkivanov.decompose.router
+import com.arkivanov.decompose.router.RouterState
+import com.arkivanov.decompose.router.router
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.decompose.value.operator.map
 import com.arkivanov.essenty.parcelable.Parcelable

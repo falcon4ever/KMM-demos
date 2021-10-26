@@ -1,6 +1,6 @@
 package com.epicwindmill.decomposekmmnavigationsample.components.root
 
-import com.arkivanov.decompose.RouterState
+import com.arkivanov.decompose.router.RouterState
 import com.arkivanov.decompose.value.Value
 import com.epicwindmill.decomposekmmnavigationsample.components.main.IMain
 

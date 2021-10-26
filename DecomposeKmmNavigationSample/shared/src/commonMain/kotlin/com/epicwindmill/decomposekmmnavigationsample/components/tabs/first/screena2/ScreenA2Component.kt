@@ -8,7 +8,7 @@ class ScreenA2Component (
 ) : IScreenA2, ComponentContext by componentContext {
 
     init {
-        backPressedDispatcher.register(::onBackPressed)
+        backPressedHandler.register(::onBackPressed)
     }
 
     // Used by iOS

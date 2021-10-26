@@ -1,6 +1,10 @@
 package com.epicwindmill.decomposekmmnavigationsample.components.tabs.third
 
-import com.arkivanov.decompose.*
+import com.arkivanov.decompose.ComponentContext
+import com.arkivanov.decompose.router.RouterState
+import com.arkivanov.decompose.router.pop
+import com.arkivanov.decompose.router.push
+import com.arkivanov.decompose.router.router
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.parcelable.Parcelable
 import com.arkivanov.essenty.parcelable.Parcelize

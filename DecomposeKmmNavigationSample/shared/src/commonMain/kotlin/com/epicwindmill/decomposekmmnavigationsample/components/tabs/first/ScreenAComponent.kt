@@ -1,6 +1,10 @@
 package com.epicwindmill.decomposekmmnavigationsample.components.tabs.first
 
-import com.arkivanov.decompose.*
+import com.arkivanov.decompose.ComponentContext
+import com.arkivanov.decompose.router.RouterState
+import com.arkivanov.decompose.router.pop
+import com.arkivanov.decompose.router.push
+import com.arkivanov.decompose.router.router
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.parcelable.Parcelable
 import com.arkivanov.essenty.parcelable.Parcelize
@@ -8,7 +12,6 @@ import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.scree
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena1.ScreenA1Component
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena2.IScreenA2
 import com.epicwindmill.decomposekmmnavigationsample.components.tabs.first.screena2.ScreenA2Component
-import com.epicwindmill.decomposekmmnavigationsample.components.tabs.second.IScreenB
 
 class ScreenAComponent(
     componentContext: ComponentContext
