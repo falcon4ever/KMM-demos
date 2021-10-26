@@ -7,7 +7,7 @@ This demo app is an example of how we can use [Decompose](https://arkivanov.gith
 The demo implements Decompose `components`, a MVIKotlin `Store` and uses `ktor` to fetch random Ron Swanson quotes.
 
 ## Build env
-This demo was created using Android Studio Arctic Fox 2020.3.1 / XCode 12.4
+This demo was created using Android Studio Bumblebee 2021.1.1 Beta 1 / XCode 13.1
 
 ## Demo
 

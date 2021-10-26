@@ -1,10 +1,10 @@
 buildscript {
 
-    val kotlinVersion by rootProject.extra { "1.5.21" }
-    val decomposeVersion by rootProject.extra { "0.3.1" }
-    val composeVersion by rootProject.extra { "1.0.1" }
-    val mviKotlinVersion by rootProject.extra { "2.0.4" }
-    val essentyVersion by rootProject.extra { "0.1.2" }
+    val kotlinVersion by rootProject.extra { "1.5.31" }
+    val decomposeVersion by rootProject.extra { "0.4.0" }
+    val composeVersion by rootProject.extra { "1.0.4" }
+    val mviKotlinVersion by rootProject.extra { "3.0.0-alpha02" }
+    val essentyVersion by rootProject.extra { "0.2.2" }
 
     repositories {
         gradlePluginPortal()
@@ -13,7 +13,7 @@ buildscript {
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        classpath("com.android.tools.build:gradle:7.0.0")
+        classpath("com.android.tools.build:gradle:7.0.3")
         classpath("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
     }
 }

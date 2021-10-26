@@ -1,6 +1,7 @@
 package com.epicwindmill.mvikotlindecomposekmmsample.components.root
 
-import com.arkivanov.decompose.RouterState
+
+import com.arkivanov.decompose.router.RouterState
 import com.arkivanov.decompose.value.Value
 import com.epicwindmill.mvikotlindecomposekmmsample.components.main.IMain
 

@@ -13,9 +13,7 @@ import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.defaultComponentContext
-import com.arkivanov.decompose.extensions.compose.jetpack.rememberRootComponent
 import com.arkivanov.mvikotlin.logging.store.LoggingStoreFactory
-import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
 import com.arkivanov.mvikotlin.timetravel.store.TimeTravelStoreFactory
 import com.epicwindmill.mvikotlindecomposekmmsample.android.ui.screens.RootUi
 import com.epicwindmill.mvikotlindecomposekmmsample.android.ui.theme.NavigationSampleTheme
@@ -45,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun myRoot(componentContext: ComponentContext): IRoot =
         RootComponent(
             componentContext = componentContext,
-            storeFactory = LoggingStoreFactory(TimeTravelStoreFactory(DefaultStoreFactory)),
+            storeFactory = LoggingStoreFactory(TimeTravelStoreFactory()),
             quotesApi = SwansonQuotesApi()
         )
 }
