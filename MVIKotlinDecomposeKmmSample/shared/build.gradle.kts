@@ -26,9 +26,7 @@ kotlin {
         }
     }
     
-    val serializationVersion = "1.3.0"
-    val ktorVersion = "1.6.4"
-    val coroutinesVersion = "1.5.2-native-mt"
+
 
     sourceSets {
         val commonMain by getting {
@@ -39,12 +37,12 @@ kotlin {
                 implementation("com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:${rootProject.extra["mviKotlinVersion"]}")
                 implementation("com.arkivanov.mvikotlin:rx:${rootProject.extra["mviKotlinVersion"]}")
 
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.extra["coroutinesVersion"]}")
 
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:${rootProject.extra["serializationVersion"]}")
 
-                implementation("io.ktor:ktor-client-core:$ktorVersion")
-                implementation("io.ktor:ktor-client-serialization:$ktorVersion")
+                implementation("io.ktor:ktor-client-core:${rootProject.extra["ktorVersion"]}")
+                implementation("io.ktor:ktor-client-serialization:${rootProject.extra["ktorVersion"]}")
             }
         }
         val commonTest by getting {
@@ -55,7 +53,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-android:$ktorVersion")
+                implementation("io.ktor:ktor-client-android:${rootProject.extra["ktorVersion"]}")
             }
         }
         val androidTest by getting {
@@ -66,7 +64,7 @@ kotlin {
         }
         val iosMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-ios:$ktorVersion")
+                implementation("io.ktor:ktor-client-ios:${rootProject.extra["ktorVersion"]}")
                 api("com.arkivanov.decompose:decompose:${rootProject.extra["decomposeVersion"]}")
                 api("com.arkivanov.mvikotlin:mvikotlin-main:${rootProject.extra["mviKotlinVersion"]}")
             }

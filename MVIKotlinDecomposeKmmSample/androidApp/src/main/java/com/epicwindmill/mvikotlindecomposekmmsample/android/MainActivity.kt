@@ -11,18 +11,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.defaultComponentContext
 import com.arkivanov.mvikotlin.logging.store.LoggingStoreFactory
 import com.arkivanov.mvikotlin.timetravel.store.TimeTravelStoreFactory
 import com.epicwindmill.mvikotlindecomposekmmsample.android.ui.screens.RootUi
 import com.epicwindmill.mvikotlindecomposekmmsample.android.ui.theme.NavigationSampleTheme
-import com.epicwindmill.mvikotlindecomposekmmsample.api.SwansonQuotesApi
+import com.epicwindmill.mvikotlindecomposekmmsample.api.SwansonQuotes
 import com.epicwindmill.mvikotlindecomposekmmsample.components.root.IRoot
 import com.epicwindmill.mvikotlindecomposekmmsample.components.root.RootComponent
 
 class MainActivity : AppCompatActivity() {
-    @ExperimentalDecomposeApi
+
     @ExperimentalComposeUiApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +43,6 @@ class MainActivity : AppCompatActivity() {
         RootComponent(
             componentContext = componentContext,
             storeFactory = LoggingStoreFactory(TimeTravelStoreFactory()),
-            quotesApi = SwansonQuotesApi()
+            quotesApi = SwansonQuotes()
         )
 }

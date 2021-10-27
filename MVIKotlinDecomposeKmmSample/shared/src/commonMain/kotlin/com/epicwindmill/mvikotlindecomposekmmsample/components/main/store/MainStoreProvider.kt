@@ -5,7 +5,7 @@ import com.arkivanov.mvikotlin.core.store.SimpleBootstrapper
 import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
-import com.epicwindmill.mvikotlindecomposekmmsample.api.IQuotesApi
+import com.epicwindmill.mvikotlindecomposekmmsample.api.SwansonQuotes
 import com.epicwindmill.mvikotlindecomposekmmsample.components.main.store.MainStore.Intent
 import com.epicwindmill.mvikotlindecomposekmmsample.components.main.store.MainStore.State
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +14,7 @@ import kotlinx.coroutines.withContext
 
 
 internal class MainStoreProvider(private val storeFactory: StoreFactory,
-                                 private val quotesApi: IQuotesApi
+                                 private val quotesApi: SwansonQuotes
 ) {
 
     fun provide(): MainStore =

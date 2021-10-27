@@ -9,7 +9,7 @@ struct ContentView: View {
             
             RootComponent(componentContext: $0,
                           storeFactory: DefaultStoreFactory(),
-                          quotesApi: SwansonQuotesApi())
+                          quotesApi: SwansonQuotes())
         }
 
     
